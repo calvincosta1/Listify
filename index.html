@@ -1,0 +1,153 @@
+<!-- 
+    Calvin Costa
+    JavaScript To-Do List Project
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>• Listify</title>
+</head>
+
+<body onload="start()">
+    <div id="app">
+        <h1>• Listify</h1>
+        <h2>All your lists in one place</h2>
+
+        <div id="intro" class="">
+            <p>
+                <a href="#" id="signup-button" class="button signup">Sign Up</a>
+                <a href="#" id="login-button" class="button login">Log In</a>
+            </p>
+        </div>
+
+        <div id="logged" class="hide">
+            <p>
+                Welcome
+                <span id="loggedin-user-firstname">First</span>
+                <span id="loggedin-user-lastname">Last</span>
+            </p>
+            <a href="#" class="button dashboard" id="dashboard-button">Dashboard</a>
+            <a href="#" class="button settings" id="settings-button">Account Settings</a>
+            <a href="#" class="button logout" id="logout-button">Log Out</a>
+        </div>
+
+        <div id="signup" class="hide">
+            <h3>Sign Up</h3>
+            <form action="#" id="signup-form">
+                <label for="signup-first">
+                    First Name<br/>
+                    <input type="text" id="signup-first" placeholder="John">
+                </label>
+                <label for="signup-last">
+                    Last Name<br/>
+                    <input type="text" id="signup-last" placeholder="Doe">
+                </label>
+                <label for="signup-email">
+                    Email<br/>
+                    <input type="email" id="signup-email" placeholder="johndoe@example.com">
+                </label>
+                <label for="signup-password">
+                    Password<br/>
+                    <input type="password" id="signup-password" placeholder="••••••••">
+                </label>
+                <label for="signup-terms">
+                    <input type="checkbox" id="signup-terms"> I agree to the <b>Terms of Use</b>
+                </label>
+                <button class="button margin">Sign Up</button>
+                <p id="signup-errors" class="error-message hide">There was an error</p>
+            </form>
+        </div>
+
+        <div id="login" class="">
+            <h3>Log In</h3>
+            <form action="#" id="login-form">
+                <label for="login-email">
+                    Email<br/>
+                    <input type="email" id="login-email" placeholder="johndoe@example.com">
+                </label>
+                <label for="login-password">
+                    Password<br/>
+                    <input type="password" id="login-password" placeholder="••••••••">
+                </label>
+                <button class="button margin" type="submit">Log In</button>
+                <p id="login-errors" class="error-message hide">There was an error</p>
+            </form>
+        </div>
+
+        <div id="dashboard" class="hide">
+            <h3>Dashboard</h3>
+
+            <ul id="dashboard-lists">
+                <li><a href="#">List</a></li>
+                <li><a href="#">List</a></li>
+                <li><a href="#">List</a></li>
+            </ul>
+
+            <br/>
+
+            <a href="#" class="button margin" id="create-new-list">Create New List</a>
+        </div>
+
+        <div id="list" class="hide">
+            <h3 id="title-list">List</h3>
+            <form action="#" id="change-title">
+                <input type="text" id="list-title" value="" placeholder="Title">
+                <p id="list-title-errors" class="error-message hide">There was an error</p>
+                <button class="button margin" type="submit">Set title</button>
+            </form>
+
+            <ul id="list-items">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li class="done">item done!</li>
+                <li>item 5</li>
+            </ul>
+
+            <form action="#" id="new-item-form">
+                <label for="list-new-item">
+                    Add new item to the list
+                    <input type="text" id="list-new-item" placeholder="Item"> 
+                </label>
+                <p id="new-item-errors" class="error-message hide">There was an error</p>
+                <button class="button margin" type="submit">Add to list</button>
+            </form>
+
+            <hr>
+        </div>
+
+        <div id="settings" class="hide">
+            <h3>Account Settings</h3>
+            <form action="#" id="settings-form">
+                <label for="settings-first">
+                    First Name<br/>
+                    <input type="text" id="settings-first" value="first name" placeholder="John">
+                </label>
+                <label for="settings-last">
+                    Last Name<br/>
+                    <input type="text" id="settings-last" value="last name" placeholder="Doe">
+                </label>
+                <label for="settings-email">
+                    Email<br/>
+                    <input type="email" id="settings-email" value="account@server.com" placeholder="johndoe@example.com">
+                </label>
+                <label for="settings-password">
+                    Password <small>(Your password won't change if you leave this field empty)</small><br/>
+                    <input type="password" id="settings-password" placeholder="••••••••">
+                </label>
+                <p id="settings-errors" class="error-message hide">There was an error</p>
+                <button class="button login margin">Update account</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
